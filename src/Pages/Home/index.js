@@ -1,30 +1,39 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import {ImageBackground, StyleSheet, Text, View} from 'react-native';
-import {ButtonDefault, Image} from '../../components';
+import {
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+import {ButtonDefault} from '../../components';
 
-import ImageBack from '../../assets/images/background.png';
-import imageLogo from '../../assets/images/logo2.png';
+import ImageBack from '../../assets/images/background.jpg';
+import imageLogo from '../../assets/images/logonova.png';
 
 export default function Home({navigation}) {
   return (
     <ImageBackground source={ImageBack} style={styles.image}>
       <View style={styles.container}>
-        <Image image={imageLogo} width={104} height={117} />
+        <Image source={imageLogo} style={styles.logo} />
         <Text style={styles.DescText}>
           Encontre peças automotivas perto de você.
         </Text>
-        <Text style={styles.SubDesc}>Crie já sua conta grátis.</Text>
-        <ButtonDefault
-          text="Entrar"
-          type="default"
-          action={() => navigation.navigate('Login')}
-        />
-        <ButtonDefault
-          text="Crie sua conta"
-          type="light"
-          action={() => navigation.navigate('Cadastro')}
-        />
+        <View style={styles.divBottom}>
+          <ButtonDefault
+            text="Cadastrar"
+            type="light"
+            action={() => navigation.navigate('Cadastro')}
+          />
+          <View style={styles.divLogin}>
+            <Text style={styles.SubDesc}>Já possui uma conta? </Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+              <Text style={styles.login}>Login</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
     </ImageBackground>
   );
@@ -35,8 +44,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-around',
-    paddingVertical: 120,
+    justifyContent: 'space-between',
+    maxHeight: 600,
   },
   image: {
     flex: 1,
@@ -46,14 +55,41 @@ const styles = StyleSheet.create({
   DescText: {
     color: '#fff',
     fontSize: 22,
-    fontFamily: 'Gilroy-Bold',
-    width: 190,
+    lineHeight: 27,
+    fontFamily: 'Gilroy-SemiBold',
+    maxWidth: 220,
     height: 95,
     textAlign: 'center',
   },
   SubDesc: {
-    color: '#C9C9C9',
+    color: '#fff',
+    fontSize: 15,
+    lineHeight: 18,
+    fontFamily: 'Gilroy-Medium',
+  },
+  logo: {
+    maxWidth: 260,
+    maxHeight: 80,
+  },
+  divBottom: {
+    width: 200,
+    height: 90,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  divLogin: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  login: {
+    color: '#fff',
     fontSize: 16,
-    fontFamily: 'Barlow-Medium',
+    lineHeight: 20,
+    fontFamily: 'Gilroy-Bold',
   },
 });
