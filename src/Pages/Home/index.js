@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {ButtonDefault} from '../../components';
 
-import ImageBack from '../../assets/images/background.jpg';
+import ImageBack from '../../assets/images/background.png';
 import imageLogo from '../../assets/images/logonova.png';
 
 export default function Home({navigation}) {
