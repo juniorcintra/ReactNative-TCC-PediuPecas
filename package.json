@@ -1,5 +1,5 @@
 {
-  "name": "AppPediuPecas",
+  "name": "newpediupecas",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,9 +8,9 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "build": "cd android && ./gradlew assembleRelease && cd app/build/outputs/apk/release && ren app-release.apk pediupecas.apk && cd ../../../../../../",
-    "clean": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd app/build/outputs/apk/release && ren app-release.apk pediupecas.apk && cd ../../../../../../",
-    "re-build": "cd android/app/build/outputs/apk/release && del *.apk && cd ../../../../../ && ./gradlew assembleRelease && cd app/build/outputs/apk/release && ren app-release.apk pediupecas.apk && cd ../../../../../../",
+    "build": "cd android && ./gradlew assembleRelease && cd app/build/outputs/apk/release && ren app-release.apk new-pediupecas.apk && cd ../../../../../../",
+    "clean": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd app/build/outputs/apk/release && ren app-release.apk new-pediupecas.apk && cd ../../../../../../",
+    "re-build": "cd android/app/build/outputs/apk/release && del *.apk && cd ../../../../../ && ./gradlew assembleRelease && cd app/build/outputs/apk/release && ren app-release.apk new-pediupecas.apk && cd ../../../../../../",
     "justClean": "cd android && ./gradlew clean",
     "patch": "yarn version --patch",
     "end-sprint": "yarn version --minor",
