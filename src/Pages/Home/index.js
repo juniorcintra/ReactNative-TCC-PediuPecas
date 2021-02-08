@@ -1,59 +1,42 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import {ImageBackground, StyleSheet, Text, View} from 'react-native';
-import {ButtonDefault, Image} from '../../components';
+import {
+  ImageBackground,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+import {ButtonDefault} from '../../components';
+
+import styles from './styles';
 
 import ImageBack from '../../assets/images/background.png';
-import imageLogo from '../../assets/images/logo2.png';
+import imageLogo from '../../assets/images/logonova.png';
 
 export default function Home({navigation}) {
   return (
     <ImageBackground source={ImageBack} style={styles.image}>
       <View style={styles.container}>
-        <Image image={imageLogo} width={104} height={117} />
+        <Image source={imageLogo} style={styles.logo} />
         <Text style={styles.DescText}>
           Encontre peças automotivas perto de você.
         </Text>
-        <Text style={styles.SubDesc}>Crie já sua conta grátis.</Text>
-        <ButtonDefault
-          text="Entrar"
-          type="default"
-          action={() => navigation.navigate('Login')}
-        />
-        <ButtonDefault
-          text="Crie sua conta"
-          type="light"
-          action={() => navigation.navigate('Cadastro')}
-        />
+
+        <View style={styles.divBottom}>
+          <ButtonDefault
+            text="Cadastrar"
+            type="light"
+            action={() => navigation.navigate('Cadastro')}
+          />
+          <View style={styles.divLogin}>
+            <Text style={styles.SubDesc}>Já possui uma conta? </Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+              <Text style={styles.login}>Login</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
     </ImageBackground>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    paddingVertical: 120,
-  },
-  image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-  },
-  DescText: {
-    color: '#fff',
-    fontSize: 22,
-    fontFamily: 'Gilroy-Bold',
-    width: 190,
-    height: 95,
-    textAlign: 'center',
-  },
-  SubDesc: {
-    color: '#C9C9C9',
-    fontSize: 16,
-    fontFamily: 'Barlow-Medium',
-  },
-});

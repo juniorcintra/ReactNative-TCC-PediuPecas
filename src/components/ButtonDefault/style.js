@@ -3,8 +3,8 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   button: {
     backgroundColor: '#EBB21D',
-    width: 279,
-    height: 53,
+    width: 200,
+    height: 35,
     borderRadius: 4,
     display: 'flex',
     justifyContent: 'center',
@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
   },
   buttonLight: {
     backgroundColor: '#fff',
-    width: 279,
-    height: 53,
+    width: 200,
+    height: 35,
     borderRadius: 4,
     display: 'flex',
     justifyContent: 'center',
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   textBtn: {
     color: '#000',
     fontFamily: 'Gilroy-Bold',
-    fontSize: 18,
+    fontSize: 16,
   },
 });
 
