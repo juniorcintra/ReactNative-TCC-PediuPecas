@@ -2,9 +2,8 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeNavigator from './HomeNavigator';
-import {Login, Cadastro, Recover, Home, Principal} from '../Pages';
+import {Login, Cadastro, Recover, onBoarding} from '../Pages';
 import {useSelector} from 'react-redux';
-// import SplashScreen from '../screens/SplashScreen/SplashScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,13 +15,13 @@ const AuthNavigator = () => {
         {isLoggedIn ? (
           <Stack.Screen name="Principal" component={HomeNavigator} />
         ) : (
-        <>
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Recover" component={Recover} />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Cadastro" component={Cadastro} />
-        </>
-         )}
+          <>
+            <Stack.Screen name="onBoarding" component={onBoarding} />
+            <Stack.Screen name="Recover" component={Recover} />
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Cadastro" component={Cadastro} />
+          </>
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );

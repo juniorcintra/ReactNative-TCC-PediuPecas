@@ -1,4 +1,4 @@
-import Home from './Home';
+import onBoarding from './onBoarding';
 import Login from './Login';
 import Cadastro from './Cadastro';
 import Recover from './Recover';
@@ -10,7 +10,7 @@ import CadastroEndereco from './Profile/cadastroEndereco';
 import ReservaDetalhe from './ReservaDetalhe';
 
 export {
-  Home,
+  onBoarding,
   Login,
   Cadastro,
   Recover,

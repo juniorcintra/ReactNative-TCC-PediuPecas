@@ -9,7 +9,7 @@ import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-export default function Home({navigation}) {
+export default function Login({navigation}) {
   const dispatch = useDispatch();
 
   const isLoading = useSelector(state => state.genericReducer.loading);
