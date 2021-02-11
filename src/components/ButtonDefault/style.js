@@ -24,6 +24,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Gilroy-Bold',
     fontSize: 16,
   },
+  none: {
+    color: '#fff',
+    fontSize: 16,
+    lineHeight: 20,
+    fontFamily: 'Gilroy-Bold',
+  },
 });
 
 export default styles;
