@@ -47,12 +47,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  login: {
-    color: '#fff',
-    fontSize: 16,
-    lineHeight: 20,
-    fontFamily: 'Gilroy-Bold',
-  },
 });
 
 export default styles;
